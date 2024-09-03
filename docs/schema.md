@@ -8,7 +8,7 @@ aside:
 show_edit_on_github: true
 ---
 
-**Version 1.6.4 (August 29, 2024)**
+**Version 1.6.5 (Sep 3, 2024)**
 
 Original authors:
 - Oliver Chang (ochang@google.com)
@@ -223,6 +223,17 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
+      <td><code>ELA</code></td>
+      <td><a href="https://www.freexian.com/lts/extended/">Debian Extended LTS Security Advisories (provided by Freexian)</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: <a href="https://github.com/captn3m0/debian-elts-advisories/#contributing">https://github.com/captn3m0/debian-elts-advisories/#contributing</a></li>
+          <li>Source URL: <code>https://deb.freexian.com/extended-lts/tracker/&lt;ID&gt;</code></li>
+          <li>OSV Formatted URL: <code>https://captnemo.in/debian-elts-advisories/advisories/&lt;ID&gt;.json</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td><code>GHSA</code></td>
       <td><a href="https://github.com/github/advisory-database">GitHub Security Advisory Database</a></td>
       <td>
@@ -388,13 +399,46 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
+      <td><code>UBUNTU</code></td>
+      <td><a href="https://ubuntu.com/security/cves">Ubuntu CVE Reports</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: TBD</li>
+          <li>Source URL: <code>https://ubuntu.com/security/&lt;ID&gt;</code></li>
+          <li>OSV Formatted URL: <code>https://github.com/canonical/ubuntu-security-notices/blob/main/osv/cve/&lt;YEAR&gt;/UBUNTU-&lt;ID&gt;.json</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>SUSE-SU</code> and <code>openSUSE-SU</code></td>
+      <td><a href="https://www.suse.com/support/security/">SUSE Security Landing page</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: <a href="https://www.suse.com/support/security/contact/">https://www.suse.com/support/security/contact/</a></li>
+          <li>Source URL: <code>https://www.suse.com/support/update/</code></li>
+          <li>OSV Formatted URL: <code>https://ftp.suse.com/pub/projects/security/osv/</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td><code>USN</code></td>
       <td><a href="https://ubuntu.com/security/notices">Ubuntu Security Notices</a></td>
       <td>
         <ul>
           <li>How to contribute: TBD</li>
           <li>Source URL: <code>https://ubuntu.com/security/notices/&lt;ID&gt;</code></li>
-          <li>OSV Formatted URL: <code>https://github.com/canonical/ubuntu-security-notices/blob/main/osv/&lt;ID&gt;.json</code></li>
+          <li>OSV Formatted URL: <code>https://github.com/canonical/ubuntu-security-notices/blob/main/osv/usn/&lt;ID&gt;.json</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>CGA</code></td>
+      <td><a href="https://packages.cgr.dev/chainguard/osv/all.json">Chainguard Security Notices</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: TBD</li>
+          <li>Source URL: TBD</li>
+          <li>OSV Formatted URL: <code>https://packages.cgr.dev/chainguard/osv/&lt;ID&gt;.json</code></li>
         </ul>
       </td>
     </tr>
@@ -674,6 +718,7 @@ The defined ecosystems are:
 | `npm` | The NPM ecosystem; the `name` field is an NPM package name.  |
 | `NuGet` | The NuGet package ecosystem. The `name` field is a NuGet package name.  |
 | `OSS-Fuzz` | For reports from the OSS-Fuzz project that have no more appropriate ecosystem; the `name` field is the name assigned by the OSS-Fuzz project, as recorded in the submitted fuzzing configuration.  |
+| `openSUSE` | The openSUSE ecosystem; The ecosystem string has a `:<RELEASE>` suffix presenting the marketing name of the openSUSE distribution. `<RELEASE>` matches the value in the `/etc/os-release` `PRETTY_NAME` field. The `name` field is the name of the source RPM and accompanied by a purl. There is an `ecosystem_specific` specific array `binaries` of the associated RPM binary packages in this specific openSUSE distribution. The ECOSYSTEM version ordering is the RPM versioncompare ordering, and the database uses the `introduced` and `fixed` boundaries.|
 | `Packagist` | The PHP package manager ecosystem; the `name` is a package name.  |
 | `Photon OS` | The Photon OS package ecosystem; the `name` is the name of the RPM package. The ecosystem string must have a `:<RELEASE-NUMBER>` suffix to scope the package to a particular Photon OS release. Eg `Photon OS:3.0`. |
 | `Pub` | The package manager for the Dart ecosystem; the `name` field is a Dart package name. |
@@ -681,6 +726,7 @@ The defined ecosystems are:
 | `Red Hat` | The Red Hat package ecosystem; the `name` field is the name of a binary or source RPM. The ecosystem string has a `:<CPE>` suffix to scope the RPM to a specific Red Hat product stream. `<CPE>` is a translation of a Red Hat [Common Platform Enumerations](https://cpe.mitre.org/) (CPE) with the `cpe/:[oa]:(redhat):` prefix removed (for example, `Red Hat:rhel_aus:8.4::appstream` translates to `cpe:/a:redhat:rhel_aus:8.4::appstream`). Red Hat ecosystem identifiers can be used to identify vulnerable RPMs installed on a Red Hat system as explained [here](https://www.redhat.com/en/blog/how-accurately-match-oval-security-data-installed-rpms).  |
 | `Rocky Linux` | The Rocky Linux package ecosystem; the `name` is the name of the source package. The ecosystem string might optionally have a `:<RELEASE>` suffix to scope the package to a particular Rocky Linux release. `<RELEASE>` is a numeric version.
 | `RubyGems` | The RubyGems ecosystem; the `name` field is a gem name.  |
+| `SUSE` | The SUSE ecosystem; The ecosystem string has a `:<RELEASE>` suffix representing the marketing name of the SUSE product. `<RELEASE>` matches the value in the /etc/os-release `PRETTY_NAME` field. The `name` field is the name of the source RPM and accompanied by a purl. There is a `ecosystem_specific` specific array `binaries` of the associated RPM binary packages in this specific SUSE product. The ECOSYSTEM version ordering is the RPM versioncompare ordering, and the database uses the `introduced` and `fixed` boundaries.|
 | `SwiftURL` | The Swift Package Manager ecosystem. The `name` is a Git URL to the source of the package. Versions are Git tags that comform to [SemVer 2.0](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#version). |
 | `Ubuntu` | The Ubuntu package ecosystem; the `name` field is the name of the source package. The ecosystem string has a `:<RELEASE>` suffix to scope the package to a particular Ubuntu release. `<RELEASE>` is a numeric ("YY.MM") version as specified in [Ubuntu Releases](https://wiki.ubuntu.com/Releases), with a mandatory `:LTS` suffix if the release is marked as LTS. The release version may also be prefixed with `:Pro:` to denote Ubuntu Pro (aka Expanded Security Maintenance (ESM)) updates. For example, the ecosystem string "Ubuntu:22.04:LTS" refers to Ubuntu 22.04 LTS (jammy), while "Ubuntu:Pro:18.04:LTS" refers to fixes that landed in Ubuntu 18.04 LTS (bionic) under Ubuntu Pro/ESM.
 | Your ecosystem here. | [Send us a PR](https://github.com/ossf/osv-schema/compare). |
