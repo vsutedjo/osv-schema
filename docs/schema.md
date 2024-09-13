@@ -8,7 +8,7 @@ aside:
 show_edit_on_github: true
 ---
 
-**Version 1.6.5 (Sep 3, 2024)**
+**Version 1.6.6 (Sep 12, 2024)**
 
 Original authors:
 - Oliver Chang (ochang@google.com)
@@ -190,6 +190,17 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
+      <td><code>CGA</code></td>
+      <td><a href="https://packages.cgr.dev/chainguard/osv/all.json">Chainguard Security Notices</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: TBD</li>
+          <li>Source URL: TBD</li>
+          <li>OSV Formatted URL: <code>https://packages.cgr.dev/chainguard/osv/&lt;ID&gt;.json</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td><code>CURL</code></td>
       <td><a href="https://curl.se/docs/security.html">Curl CVEs</a></td>
       <td>
@@ -355,7 +366,7 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
-      <td><code>Red Hat</code></td>
+      <td><code>RHSA</code>/<code>RHBA</code>/<code>RHEA</code></td>
       <td><a href="https://security.access.redhat.com/data">Red Hat Security Data</a></td>
       <td>
         <ul>
@@ -399,6 +410,17 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
+      <td><code>SUSE-SU</code>, <code>SUSE-RU</code>, <code>SUSE-FU</code>, <code>SUSE-OU</code> and <code>openSUSE-SU</code></td>
+      <td><a href="https://www.suse.com/support/security/">SUSE Security Landing page</a></td>
+      <td>
+        <ul>
+          <li>How to contribute: <a href="https://www.suse.com/support/security/contact/">https://www.suse.com/support/security/contact/</a></li>
+          <li>Source URL: <code>https://www.suse.com/support/update/</code></li>
+          <li>OSV Formatted URL: <code>https://ftp.suse.com/pub/projects/security/osv/</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td><code>UBUNTU</code></td>
       <td><a href="https://ubuntu.com/security/cves">Ubuntu CVE Reports</a></td>
       <td>
@@ -410,17 +432,6 @@ The defined database prefixes and their "home" databases are:
       </td>
     </tr>
     <tr>
-      <td><code>SUSE-SU</code> and <code>openSUSE-SU</code></td>
-      <td><a href="https://www.suse.com/support/security/">SUSE Security Landing page</a></td>
-      <td>
-        <ul>
-          <li>How to contribute: <a href="https://www.suse.com/support/security/contact/">https://www.suse.com/support/security/contact/</a></li>
-          <li>Source URL: <code>https://www.suse.com/support/update/</code></li>
-          <li>OSV Formatted URL: <code>https://ftp.suse.com/pub/projects/security/osv/</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
       <td><code>USN</code></td>
       <td><a href="https://ubuntu.com/security/notices">Ubuntu Security Notices</a></td>
       <td>
@@ -428,28 +439,6 @@ The defined database prefixes and their "home" databases are:
           <li>How to contribute: TBD</li>
           <li>Source URL: <code>https://ubuntu.com/security/notices/&lt;ID&gt;</code></li>
           <li>OSV Formatted URL: <code>https://github.com/canonical/ubuntu-security-notices/blob/main/osv/usn/&lt;ID&gt;.json</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><code>CGA</code></td>
-      <td><a href="https://packages.cgr.dev/chainguard/osv/all.json">Chainguard Security Notices</a></td>
-      <td>
-        <ul>
-          <li>How to contribute: TBD</li>
-          <li>Source URL: TBD</li>
-          <li>OSV Formatted URL: <code>https://packages.cgr.dev/chainguard/osv/&lt;ID&gt;.json</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><code>CGA</code></td>
-      <td><a href="https://packages.cgr.dev/chainguard/osv/all.json">Chainguard Security Notices</a></td>
-      <td>
-        <ul>
-          <li>How to contribute: TBD</li>
-          <li>Source URL: TBD</li>
-          <li>OSV Formatted URL: <code>https://packages.cgr.dev/chainguard/osv/&lt;ID&gt;.json</code></li>
         </ul>
       </td>
     </tr>
